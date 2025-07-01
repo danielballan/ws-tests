@@ -1,5 +1,7 @@
 ## Usage
 
+Start server.
+
 ```
 ❯ pixi run serve
 ✨ Pixi task (serve): python server.py
@@ -8,6 +10,8 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 ```
+
+Test with httpie client.
 
 ```
  pixi run client
@@ -35,4 +39,20 @@ Server logs will show:
 INFO:     127.0.0.1:56334 - "WebSocket /ws" [accepted]
 INFO:     connection open
 INFO:     connection closed
+```
+
+Test over ASGI with pytest.
+
+```
+❯ pixi run test
+✨ Pixi task (test): pytest test.py
+================================= test session starts =================================
+platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0
+rootdir: /home/dallan/Repos/bnl/ws-tests
+plugins: anyio-4.9.0
+collected 1 item
+
+test.py .                                                                       [100%]
+
+================================== 1 passed in 0.25s ==================================
 ```
