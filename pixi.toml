@@ -1,0 +1,22 @@
+[workspace]
+authors = ["Dan Allan <>"]
+channels = ["conda-forge"]
+name = "ws-tests"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+serve = "python server.py"
+client = "http ws://localhost:8000/ws"
+test = "pytest test.py"
+
+[dependencies]
+httpie = "*"
+redis-py = ">=6.2.0,<7"
+fastapi = ">=0.115.14,<0.116"
+uvicorn = ">=0.35.0,<0.36"
+pydantic-settings = ">=2.10.1,<3"
+pytest = ">=8.4.1,<9"
+
+[pypi-dependencies]
+httpie-websockets = "*"
